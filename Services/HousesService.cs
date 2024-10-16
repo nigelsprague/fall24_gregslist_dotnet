@@ -11,6 +11,12 @@ public class HousesService
     _repository = repository;
   }
 
+  internal House CreateHouse(House houseData)
+  {
+    House house = _repository.CreateHouse(houseData);
+    return house;
+  }
+
   internal List<House> GetAllHouses()
   {
     List<House> houses = _repository.GetAllHouses();

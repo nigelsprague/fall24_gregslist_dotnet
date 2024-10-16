@@ -1,3 +1,6 @@
+
+using Microsoft.AspNetCore.Http.HttpResults;
+
 namespace gregslist_csharp.Services;
 
 public class HousesService
@@ -6,5 +9,11 @@ public class HousesService
   public HousesService(HousesRepository repository)
   {
     _repository = repository;
+  }
+
+  internal List<House> GetAllHouses()
+  {
+    List<House> houses = _repository.GetAllHouses();
+    return houses;
   }
 }
